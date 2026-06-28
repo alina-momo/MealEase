@@ -1,9 +1,9 @@
-# LeafBite — Food Convenience Website
+# MealEase — Food Convenience Website
 
-LeafBite is a polished course-project website for a Chattogram-based meal convenience business. It includes normal meal ordering, subscription plans, frozen foods, ready-to-cook ingredient packs, special offers, checkout, cash payment, delivery schedule, and customer delivery notes.
+MealEase is a polished course-project website for a Chattogram-based meal convenience business. It includes normal meal ordering, subscription plans, frozen foods, ready-to-cook ingredient packs, special offers, checkout, cash payment, delivery schedule, and customer delivery notes.
 
 ## Website name
-**LeafBite** — a short memorable name combining fresh leaf/ingredients with food bites.
+**MealEase** — a short memorable name combining fresh leaf/ingredients with food bites.
 
 ## Pages included
 - Home
