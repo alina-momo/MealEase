@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MealEase is a fresh meal, subscription, frozen food, and ready-to-cook delivery concept for Chattogram.">
+  <title>Ready-to-Cook & Frozen Foods | MealEase</title>
+  <link rel="icon" href="assets/tab_logo.png" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="logo-wrap" href="index.html" aria-label="MealEase home"><img src="assets/logo.svg" alt="MealEase logo"></a>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="subscription.html">Subscriptions</a>
+        <a href="ready-to-cook.html">Ready-to-Cook</a>
+        <a href="offers.html">Offers</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-actions">
+        <a href="checkout.html" class="cart-pill"><span class="label">Package</span> 🛒 <span class="cart-count" data-cart-count>0</span></a>
+        <button class="mobile-toggle" data-mobile-toggle aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <div>
+          <span class="kicker">🥬 Prep-time saver</span>
+          <h1>Ready-to-cook packs and frozen food convenience.</h1>
+          <p>For busy women, families, and students who do not only need cooked food — they need meal preparation support at home.</p>
+        </div>
+        <div class="page-card"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1000&q=80" alt="Ready to cook ingredients"></div>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container" data-filter-group data-target="[data-pack-grid]">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ready-to-cook">Ready-to-Cook</button>
+          <button class="filter-btn" data-filter="frozen">Frozen Food</button>
+          <button class="filter-btn" data-filter="combo">Combo</button>
+        </div>
+        <div class="product-grid" data-pack-grid></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container split">
+        <div class="panel">
+          <h2 class="section-title">How pricing works</h2>
+          <ul class="check-list">
+            <li>Customer pays the actual ingredient cost.</li>
+            <li>Ready-to-cook service charge: 50–120 BDT depending on preparation.</li>
+            <li>Delivery charge: 50–100 BDT depending on location.</li>
+            <li>Order-based prep helps minimize food waste.</li>
+          </ul>
+        </div>
+        <div class="panel dark">
+          <h2 class="section-title" style="color:white;">Why it matters</h2>
+          <p>Many alternatives only deliver cooked food. MealEase also reduces washing, chopping, cleaning fish/meat, and daily meal preparation stress at home.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <img src="assets/logo.svg" alt="MealEase logo" style="height:58px; width:auto; margin-bottom:16px; background:white; border-radius:18px;">
+        <p>Chattogram's fresh meal convenience concept for students, office workers, working women, and busy families.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="menu.html">Normal Menu</a>
+        <a href="subscription.html">Subscription Menu</a>
+        <a href="ready-to-cook.html">Frozen & Ready-to-Cook</a>
+        <a href="offers.html">Special Offers</a>
+      </div>
+      <div>
+        <h4>Promise</h4>
+        <a href="about.html#hygiene">Hygiene videos</a>
+        <a href="about.html#packaging">Hot food packaging</a>
+        <a href="about.html#impact">Goal & impact</a>
+        <a href="checkout.html">Cash on delivery</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Demo brand for course presentation<br>Chattogram, Bangladesh<br>hello@MealEase.demo</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 MealEase | Developed by Alina Momo </div>
+  </footer>
+  <div class="toast" aria-live="polite"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
