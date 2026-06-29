@@ -417,7 +417,7 @@ button, input, select, textarea { font-family: inherit; }
 .product-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; }
 .product-actions { margin-top: auto; padding-top: 10px; }
 
-.plan-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .plan-card {
   position: relative;
   border-radius: 28px;

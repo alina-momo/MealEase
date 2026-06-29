@@ -1,11 +1,11 @@
 const LB_IMAGES = {
-  bowl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80',
-  lunch: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80',
-  breakfast: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80',
-  dinner: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80',
-  salad: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80',
-  curry: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=80',
-  snack: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80',
+  bowl: 'https://images.unsplash.com/photo-1695712641569-05eee7b37b6d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  lunch: 'https://plus.unsplash.com/premium_photo-1695297516710-854716c51121?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  breakfast: 'https://images.unsplash.com/photo-1734774924912-dcbb467f8599?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  dinner: 'https://images.unsplash.com/photo-1684815495679-f6e6bc0634ec?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  salad: 'https://plus.unsplash.com/premium_photo-1667807515956-fbe501d03e26?q=80&w=794&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  curry: 'https://images.unsplash.com/photo-1624772398066-98584aa2f214?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  snack: 'https://images.unsplash.com/photo-1501432781167-c0ccfd492297?q=80&w=693&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   drink: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80',
   ingredients: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=80',
   frozen: 'https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=900&q=80',
@@ -14,15 +14,14 @@ const LB_IMAGES = {
 };
 
 const products = [
-  { id: 'breakfast-classic', name: 'Classic Breakfast Box', category: 'breakfast', type: 'Meal Package', price: 160, image: LB_IMAGES.breakfast, desc: 'Paratha, egg, seasonal vegetable, and fresh chutney for a busy morning.', tags: ['Fresh morning', 'Office friendly'] },
-  { id: 'breakfast-healthy', name: 'Green Start Breakfast', category: 'breakfast', type: 'Meal Package', price: 190, image: LB_IMAGES.salad, desc: 'Balanced breakfast bowl with egg or paneer, fruit, and light carbs.', tags: ['Healthy', 'Light'] },
-  { id: 'lunch-comfort', name: 'Daily Comfort Lunch', category: 'lunch', type: 'Meal Package', price: 240, image: LB_IMAGES.curry, desc: 'Rice, protein curry, dal, vegetable, salad, and foil-sealed warm packaging.', tags: ['Hot delivery', 'Best seller'] },
-  { id: 'lunch-office', name: 'Office Team Lunch', category: 'lunch', type: 'Meal Package', price: 220, image: LB_IMAGES.lunch, desc: 'Simple office lunch designed for group orders and predictable daily delivery.', tags: ['Free delivery 5+', 'Team pack'] },
-  { id: 'dinner-family', name: 'Family Dinner Set', category: 'dinner', type: 'Meal Package', price: 520, image: LB_IMAGES.dinner, desc: 'A warm dinner set for two with rice/roti, protein, vegetable, and salad.', tags: ['For 2 people', 'Warm bag'] },
-  { id: 'dinner-light', name: 'Light Dinner Bowl', category: 'dinner', type: 'Meal Package', price: 260, image: LB_IMAGES.bowl, desc: 'A lower-oil bowl for customers who want a clean dinner option.', tags: ['Balanced', 'Fresh daily'] },
-  { id: 'snacks-box', name: 'Afternoon Snack Box', category: 'snacks', type: 'Snacks', price: 140, image: LB_IMAGES.snack, desc: 'Rotating snack box for tea breaks, study sessions, and office meetings.', tags: ['Tea time', 'Quick bite'] },
-  { id: 'fast-food-green', name: 'Weekend Fast Food Combo', category: 'fast-food', type: 'Fast Food', price: 330, image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80', desc: 'A fun weekend combo with fresh prep and safer packaging standards.', tags: ['Weekend', 'Popular'] },
-  { id: 'drink-refresh', name: 'Fresh Drink Pair', category: 'drinks', type: 'Drinks', price: 90, image: LB_IMAGES.drink, desc: 'Seasonal fresh juice or lemon drink paired with any meal order.', tags: ['Add-on', 'Refreshing'] }
+  { id: 'breakfast-classic', name: 'Chicken Roll', category: 'breakfast', type: 'Frozen Snacks', price: 240, image: LB_IMAGES.breakfast, desc: 'Chopped chicken with vegetables wrapped with a whole wheat tortilla covered in crumbs.', tags: ['Healthy', 'Light'] },
+  { id: 'breakfast-healthy', name: 'Nuggets', category: 'breakfast', type: 'Frozen Snacks', price: 480, image: LB_IMAGES.salad, desc: 'Chicken and vegetable nuggets with a light coating.', tags: ['Flavorful', 'Family-size'] },
+  { id: 'lunch-comfort', name: 'Sausage', category: 'breakfast', type: 'Frozen Snacks', price: 90, image: LB_IMAGES.curry, desc: 'Homemade sausage with a savory flavor.', tags: ['Cheesy', 'Yummy'] },
+  { id: 'lunch-office', name: 'Samosa', category: 'breakfast', type: 'Frozen Snacks', price: 240, image: LB_IMAGES.lunch, desc: 'Chicken and vegetable samosa filled with spiced potatoes and peas.', tags: ['Free delivery 5+', 'Best Seller'] },
+  { id: 'dinner-family', name: 'French Fries', category: 'breakfast', type: 'Frozen Snacks', price: 80, image: LB_IMAGES.dinner, desc: 'Fresh picked potatoes, lightly seasoned and fried to perfection.', tags: ['For 2 people', 'Warm bag'] },
+  { id: 'dinner-light', name: 'Spring Roll', category: 'breakfast', type: 'Frozen Snacks', price: 180, image: LB_IMAGES.bowl, desc: 'Vegetable spring rolls with a light coating.', tags: ['Balanced', 'Healthy'] },
+  { id: 'snacks-box', name: 'Firni', category: 'lunch', type: 'Dessert', price: 100, image: LB_IMAGES.snack, desc: 'Perfect sweet treat for any time of the day.', tags: ['Sweet', 'Healthy'] },
+  { id: 'fast-food-green', name: 'Pudding', category: 'lunch', type: 'Dessert', price: 30, image: 'https://images.unsplash.com/photo-1637362449062-ae26d7732d0c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', desc: 'Tongue twister dessert that\'s a hit with kids and adults alike.', tags: ['Cheap', 'Popular'] }
 ];
 
 const packs = [
@@ -31,7 +30,7 @@ const packs = [
   { id: 'rtc-meat-marinade', name: 'Marinated Meat Starter Kit', category: 'ready-to-cook', type: 'Ready-to-Cook', price: 260, image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=80', desc: 'Cut meat with basic marinade and cooking notes for faster dinner prep.', tags: ['Ready to cook', 'Dinner saver'] },
   { id: 'frozen-singara', name: 'Frozen Snack Party Pack', category: 'frozen', type: 'Frozen Food', price: 280, image: LB_IMAGES.frozen, desc: 'Frozen snacks for home storage, quick frying, and family tea time.', tags: ['Freezer safe', 'Party pack'] },
   { id: 'frozen-meal', name: 'Frozen Curry Base Pack', category: 'frozen', type: 'Frozen Food', price: 320, image: LB_IMAGES.packaging, desc: 'Prepared frozen curry base to reduce cooking time on busy nights.', tags: ['Convenient', 'Longer storage'] },
-  { id: 'combo-home', name: 'Busy Family Prep Combo', category: 'combo', type: 'Combo Pack', price: 650, image: 'https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=900&q=80', desc: 'Vegetables, protein prep, and frozen add-ons in one convenience bundle.', tags: ['Best value', 'Family'] }
+  { id: 'combo-home', name: 'Busy Family Prep Combo', category: 'combo', type: 'Combo Pack', price: 500, image: 'https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=900&q=80', desc: 'Vegetables, protein prep, and frozen add-ons in one convenience bundle.', tags: ['Best value', 'Family'] }
 ];
 
 function getCart() {
@@ -145,6 +144,7 @@ function setupSubscriptionBuilder() {
   const duration = form.querySelector('[name="duration"]');
   const mealType = form.querySelector('[name="mealType"]');
   const deliveryTime = form.querySelector('[name="deliveryTime"]');
+  const discountInput = form.querySelector('[name="discountCode"]');
   const totalEl = document.querySelector('[data-sub-total]');
 
   const summaryEls = {
@@ -155,6 +155,7 @@ function setupSubscriptionBuilder() {
     time: document.querySelector('[data-sub-time]'),
     base: document.querySelector('[data-sub-base]'),
     deliveryFee: document.querySelector('[data-sub-delivery-fee]'),
+    discount: document.querySelector('[data-sub-discount]'),
     addons: document.querySelector('[data-sub-addons]'),
     addonTotal: document.querySelector('[data-sub-addon-total]')
   };
@@ -192,14 +193,38 @@ function setupSubscriptionBuilder() {
   }
 
   function calc() {
-    const DELIVERY_FEE = 50;
     const meal = activeMeal();
     const config = durationConfig[duration.value];
+    const DELIVERY_FEE = 50 * config.deliveries;
     const addons = selectedAddons();
     const baseTotal = calcBaseTotal(meal, config);
     const addonPerDay = addons.reduce((sum, addon) => sum + addon.price, 0);
     const addonTotal = addonPerDay * config.deliveries;
-    const total = baseTotal + addonTotal + DELIVERY_FEE;
+    let discount = 0;
+
+    const code = discountInput.value.trim().toUpperCase();
+
+    switch (code) {
+
+      case "TEAM5":
+        // Free delivery
+        discount = DELIVERY_FEE;
+        break;
+
+      case "FIRST7":
+        // 15% off base meal
+        if (config.deliveries === 5) {
+          discount = baseTotal * 0.15;
+        }
+        break;
+
+      case "HOMEHELP":
+        // 10% off add-ons
+        discount = addonTotal * 0.10;
+        break;
+
+    }
+    const total = baseTotal + addonTotal + DELIVERY_FEE - discount;
 
     setSelectedMealStyle();
     summaryEls.deal.textContent = meal.dataset.deal;
@@ -209,6 +234,7 @@ function setupSubscriptionBuilder() {
     summaryEls.time.textContent = deliveryTime.value;
     summaryEls.base.textContent = formatBDT(baseTotal);
     summaryEls.deliveryFee.textContent = formatBDT(DELIVERY_FEE);
+    summaryEls.discount.textContent = discount > 0 ? "-" + formatBDT(discount) : "৳0";
     summaryEls.addons.textContent = addons.length ? addons.map(addon => `${addon.name} (${formatBDT(addon.price)}/day)`).join(', ') : 'None';
     summaryEls.addonTotal.textContent = formatBDT(addonTotal);
     totalEl.textContent = formatBDT(total);
@@ -228,7 +254,9 @@ function setupSubscriptionBuilder() {
     });
   });
 
-  form.querySelectorAll('select, [name="meal"], [name="addon"]').forEach(el => el.addEventListener('change', calc));
+  form.querySelectorAll(
+    'select, [name="meal"], [name="addon"], [name="discountCode"]'
+  ).forEach(el => el.addEventListener('input', calc));
   calc();
 
   form.addEventListener('submit', event => {
