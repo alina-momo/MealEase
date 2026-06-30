@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | MealEase</title>
+
+    <link rel="icon" href="assets/tab_logo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav class="navbar">
+
+            <a class="logo-wrap" href="index.html">
+                <img src="assets/logo.svg" alt="MealEase">
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="subscription.html">Subscriptions</a>
+                <a href="ready-to-cook.html">Ready-to-Cook</a>
+                <a href="offers.html">Offers</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="checkout.html" class="cart-pill">
+                    <span class="label">Package</span>
+                    🛒
+                    <span class="cart-count" data-cart-count>0</span>
+                </a>
+
+                <button class="mobile-toggle" data-mobile-toggle aria-label="Open menu">☰</button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="form-card auth-card">
+
+                    <img src="assets/logo.svg" alt="MealEase" style="width:250px;display:block;margin:0 auto 25px;">
+                    <div class="section-head-login compact-head">
+
+                    
+
+                        <h2 class="section-title-login">
+                            Create Your Account
+                        </h2>
+
+                    
+
+                    </div>
+
+                    <form id="signupForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>First Name</label>
+
+                                <input type="text" id="firstName" placeholder="First Name" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label>Last Name</label>
+
+                                <input type="text" id="lastName" placeholder="Last Name" required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Email Address</label>
+
+                            <input type="email" id="signupEmail" placeholder="example@email.com" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Phone Number</label>
+
+                            <input type="tel" id="phone" placeholder="01XXXXXXXXX" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Password</label>
+
+                            <input type="password" id="signupPassword" placeholder="Minimum 6 characters" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>Confirm Password</label>
+
+                            <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+
+                        </div>
+
+                        <label class="remember-row">
+
+                            <input type="checkbox" id="showSignupPassword">
+
+                            Show Password
+
+                        </label>
+
+                        <p id="signupMessage" style="color:#d62828;font-weight:600;margin:15px 0;">
+                        </p>
+
+                        <button type="submit" class="btn btn-primary btn-wide " style="font-size: large;">
+
+                            Create Account
+
+                        </button>
+
+                        <div class="login-links">
+
+                            <span>
+                                Already have an account?
+                            </span>
+
+                            <a href="login.html">
+                                Login Here
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-bottom">
+
+            © 2026 MealEase | Developed by Alina Momo
+
+        </div>
+
+    </footer>
+
+    <div class="toast"></div>
+
+    <script>
+
+        const signupPassword = document.getElementById("signupPassword");
+        const confirmPassword = document.getElementById("confirmPassword");
+
+        document
+            .getElementById("showSignupPassword")
+            .addEventListener("change", function () {
+
+                signupPassword.type = this.checked ? "text" : "password";
+                confirmPassword.type = this.checked ? "text" : "password";
+
+            });
+
+    </script>
+
+    <script src="assets/app.js"></script>
+
+</body>
+
+</html>

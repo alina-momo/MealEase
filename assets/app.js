@@ -1,3 +1,27 @@
+/* ===========================
+   LOGIN SYSTEM
+=========================== */
+
+function getUsers() {
+  return JSON.parse(localStorage.getItem("mealEaseUsers")) || [];
+}
+
+function saveUsers(users) {
+  localStorage.setItem("mealEaseUsers", JSON.stringify(users));
+}
+
+function getCurrentUser() {
+  return JSON.parse(localStorage.getItem("mealEaseCurrentUser"));
+}
+
+function setCurrentUser(user) {
+  localStorage.setItem("mealEaseCurrentUser", JSON.stringify(user));
+}
+
+function logout() {
+  localStorage.removeItem("mealEaseCurrentUser");
+  location.href = "index.html";
+}
 const LB_IMAGES = {
   bowl: 'https://images.unsplash.com/photo-1695712641569-05eee7b37b6d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   lunch: 'https://plus.unsplash.com/premium_photo-1695297516710-854716c51121?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -33,14 +57,35 @@ const packs = [
   { id: 'combo-home', name: 'Busy Family Prep Combo', category: 'combo', type: 'Combo Pack', price: 500, image: 'https://images.unsplash.com/photo-1543352634-a1c51d9f1fa7?auto=format&fit=crop&w=900&q=80', desc: 'Vegetables, protein prep, and frozen add-ons in one convenience bundle.', tags: ['Best value', 'Family'] }
 ];
 
+function getCartKey() {
+
+  const user = getCurrentUser();
+
+  if (user) {
+    return "mealEaseCart_" + user.email;
+  }
+
+  return "mealEaseGuestCart";
+
+}
+
 function getCart() {
-  try { return JSON.parse(localStorage.getItem('leafbiteCart')) || []; }
-  catch { return []; }
+
+  return JSON.parse(
+    localStorage.getItem(getCartKey())
+  ) || [];
+
 }
+
 function setCart(cart) {
-  localStorage.setItem('leafbiteCart', JSON.stringify(cart));
-  updateCartCount();
+
+  localStorage.setItem(
+    getCartKey(),
+    JSON.stringify(cart)
+  );
+
 }
+
 function cartCount() {
   return getCart().reduce((sum, item) => sum + item.qty, 0);
 }
@@ -355,3 +400,209 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCheckout();
   activateCurrentLink();
 });
+
+
+const signupForm = document.getElementById("signupForm");
+
+if (signupForm) {
+
+  signupForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const first = document.getElementById("firstName").value.trim();
+    const last = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim().toLowerCase();
+    const phone = document.getElementById("phone").value.trim();
+    const password = document.getElementById("signupPassword").value;
+    const confirm = document.getElementById("confirmPassword").value;
+
+    const message = document.getElementById("signupMessage");
+
+    message.innerHTML = "";
+
+    if (password.length < 6) {
+
+      message.innerHTML = "Password must be at least 6 characters.";
+
+      return;
+
+    }
+
+    if (password !== confirm) {
+
+      message.innerHTML = "Passwords do not match.";
+
+      return;
+
+    }
+
+    const users = getUsers();
+
+    const exists = users.find(user => user.email === email);
+
+    if (exists) {
+
+      message.innerHTML = "Email already exists.";
+
+      return;
+
+    }
+
+    const user = {
+
+      first,
+
+      last,
+
+      email,
+
+      phone,
+
+      password
+
+    };
+
+    users.push(user);
+
+    saveUsers(users);
+
+    setCurrentUser(user);
+
+    showToast("Account created!");
+
+    location.href = "index.html";
+
+  });
+
+}
+
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+
+  loginForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+    const password = document.getElementById("loginPassword").value;
+
+    const users = getUsers();
+
+    const user = users.find(u => u.email === email && u.password === password);
+
+    const message = document.getElementById("loginMessage");
+
+    if (!user) {
+
+      message.innerHTML = "Incorrect email or password.";
+
+      return;
+
+    }
+
+    setCurrentUser(user);
+
+    showToast("Welcome back!");
+
+    const returnPage = sessionStorage.getItem("returnPage");
+
+    if (returnPage) {
+
+      sessionStorage.removeItem("returnPage");
+
+      location.href = returnPage;
+
+    }
+    else {
+
+      location.href = "index.html";
+
+    }
+
+  });
+
+}
+const userContainer = document.getElementById("userMenuContainer");
+
+if(userContainer){
+
+    const user = getCurrentUser();
+
+    if(user){
+
+        userContainer.innerHTML=`
+
+        <div class="user-menu">
+
+            <button class="user-button" id="userButton">
+
+              <span class="user-icon">👤</span>
+                <span class="user-name">${user.first}</span>
+                <span class="user-arrow">▼</span>
+
+            </button>
+
+            <div class="user-dropdown" id="userDropdown">
+
+                <button id="logoutBtn">
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+        document
+        .getElementById("userButton")
+        .addEventListener("click",()=>{
+
+            document
+            .getElementById("userDropdown")
+            .classList.toggle("show");
+
+        });
+
+        document
+        .getElementById("logoutBtn")
+        .addEventListener("click",()=>{
+
+            logout();
+
+        });
+
+        document.addEventListener("click",(e)=>{
+
+            if(!e.target.closest(".user-menu")){
+
+                document
+                .getElementById("userDropdown")
+                ?.classList.remove("show");
+
+            }
+
+        });
+
+    }
+
+}
+
+function logout(){
+
+    localStorage.removeItem("mealEaseCurrentUser");
+
+    showToast("Logged out successfully.");
+
+    setTimeout(()=>{
+
+        location.href="index.html";
+
+    },800);
+
+}
+
