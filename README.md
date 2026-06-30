@@ -19,7 +19,7 @@ MealEase is a polished course-project website for a Chattogram-based meal conven
 - Custom SVG logo
 - Responsive design
 - Product/category selection
-- Subscription plan builder: 7 days, 14 days, 1 month, 2 months
+- Subscription plan builder: 7 days, 14 days, 1 month
 - Delivery time selection
 - Shopping cart / selected package summary
 - Delivery address and note fields
